@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+/**
+ * Indices:
+ *
+ * 1.0 - Introduction
+ * 2.0 - Layout
+ * 3.0 - Header
+ *   3.1 - Logo
+ *   3.2 - Menu
+ * 4.0 - Container
+ * 5.0 - Portfolio
+ * 6.0 - Testimonials
+ * 7.0 - Footer
+ * 8.0 - Images
+ * 9.0 - Media Queries
+ * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ * 1.0 INTRODUCTION
+ * ------------------------------------------------------------------------- */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, em, font, img, q, s, samp, small, strike, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tr, th, td {background: transparent; border: 0; margin: 0; padding: 0; vertical-align: baseline;}
+
+html, body {width: 100%; height: 100%;}
+body, input, textarea {font-family: 'Open Sans', sans-serif; font-size: 62.5%; font-weight: 300; line-height: 1.8; color: #232930;}
+input, textarea {outline: 0; resize: none;}
+
+h1, h2, h3, h4, h5, h6 {clear: both; line-height: 1.6;}
+h1 {font-size: 3em; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em;}
+h2 {font-size: 2.4em; font-weight: 400; color: #E1CDAA; font-style: italic; padding: 0.4em 0;}
+h3 {font-size: 1.8em; font-weight: 400; color: #E1CDAA; font-style: italic;}
+
+a {text-decoration: none; outline: none; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -o-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out;}
+a:link {color: #232930;}
+a:visited {color: #D3D5D7;}
+a:active, a:hover {color: #E1CDAA;}
+a img {border: none; max-width: 100%;}
+
+/* Text elements */
+
+p {font-size: 1.5em; margin-bottom: 2em;}
+p:last-child {margin-bottom: 0;}
+strong, b {font-weight: 600;}
+span {color: #D3D5D7;}
+blockquote {font-style: italic;	padding: 0 3em;}
+blockquote cite, blockquote em, blockquote i {font-style: normal;}
+blockquote:before, blockquote:after {content: ''; content: none;}
+
+ol, ul {list-style: none; margin: 0; padding: 0;}
+ul, li {list-style-type: none;}
+del {text-decoration: line-through;}
+time {text-transform: capitalize;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+.clearfix:before, .clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}
+.clearfix {*zoom: 1;}
+
+*, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+a[href^=tel] {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------
+ * 2.0 LAYOUT
+ * ------------------------------------------------------------------------- */
+
+#about-content {position: absolute; width: 100%; height: 100%; max-width: 100%;}
+#about-content h1::after {content: " "; border: solid 1px #232930; display: block; width: 1em; margin: 0.6em auto auto auto;}
+
+.single-content {margin-top: 8em;}
+
+.view-content {width: 1160px; margin: 0 auto; padding: 12em 2em; overflow: hidden; clear: both;}
+.intro {position: relative; width: 60%; margin: 2.5em auto;}
+
+.text-center {text-align: center}
+
+.column {width: 30%; float: left; position: relative;}
+.column:first-child {margin-right: 5%;}
+.column:last-child {margin-left: 5%;}
+
+/* Preloader */
+
+#jpreOverlay {background-color: #232930;}
+#jpreLoader{width: 140px; height: 140px; top: 50%; left: 50%; margin-top: -70px; margin-left: -70px; border: 8px solid #E1CDAA;	border-radius: 50%;	-moz-border-radius: 50%; -webkit-border-radius: 50%;}
+#jpreBar {display: none;}
+#jprePercentage {font-family: 'Open Sans', sans-serif; font-size: 4em; font-weight: 300; color: white; text-align: center; line-height: 124px; letter-spacing: -0.050em;}
+
+/* Waypoints  */
+
+.wp1, .wp2, .wp3, .wp4, .wp5, .wp6 {visibility: hidden;}
+.bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight {visibility: visible;}
+.delay-05s {animation-delay: 0.5s; -webkit-animation-delay: 0.5s;}
+.delay-1s {animation-delay: 1s; -webkit-animation-delay: 1s;}
+.delay-15s {animation-delay: 1.5s; -webkit-animation-delay: 1.5s;}
+
+/* -------------------------------------------------------------------------
+ * 3.0 Header
+ * ------------------------------------------------------------------------- */
+
+header {margin: 0; padding: 0;}
+
+#main-header {position: relative; width: 100%; height: auto; z-index: 1000; margin: 0 auto;}
+#main-header.fixed {-webkit-animation: fadeIn ease-in .5s; -moz-animation: fadeIn ease-in .5s; animation: fadeIn ease-in .5s; -webkit-animation-fill-mode: forwards; -moz-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+#main-header.fixed, #secondary-header {background: #1C2125; position: fixed; margin: 0; top: 0; left: 0; z-index: 1000; width: 100%; height: 80px; box-shadow: 0 2px 10px rgba(0,0,0,.1);}
+#main-header.fixed #logo, #secondary-header #logo {font-size: 1.7em; line-height: 40px; width: 50px; height: 50px; margin-top: 15px; border-width: 5px;}
+#main-header.fixed nav, #secondary-header nav {margin-top: 2.1em;}
+#main-header.fixed #navigation li, #secondary-header #navigation li {border-color: #7C8086;}
+#main-header.fixed #navigation li a, #secondary-header #navigation li a {color: #7C8086;}
+#main-header.fixed #navigation li a:hover, #secondary-header #navigation li a:hover {color: #E1CDAA;}
+
+/* ======================================
+ * 3.1 LOGO
+ * ====================================== */
+
+#logo {font-size: 2.4em; font-weight: 800; color: white; line-height: 58px; width: 70px; height: 70px; float: left; text-align: center; margin-top: 2.5em; margin-left: 6%; border: 6px solid #E1CDAA; border-radius: 50%; -o-border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;}
+#logo:hover {border-color: white;}
+
+/* ======================================
+ * 3.2 MENU
+ * ====================================== */
+ 
+#navigation {float: right; margin-top: 7.6em; margin-right: 4%;}
+
+#navigation li {float: left; padding: 0.4em 2.2em; border-left: 2px solid white;}
+#navigation li:first-child {margin-left: 0; border: none;}
+
+#navigation li a {color: white; text-decoration: none; font-size: 1.7em; display: block; font-style: italic; font-weight: 400; letter-spacing: -0.060em; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+#navigation li a:hover, #navigation li a:active {color: #E1CDAA;}
+
+/* -------------------------------------------------------------------------
+ * 4.0 CONTAINER
+ * ------------------------------------------------------------------------- */
+ 
+#cover, body.homepage {background: url("images/dean-bg.png") no-repeat; background-position: top center; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; -o-background-size: cover; width: 100%; height: 100%; position: relative;}
+
+#cover .welcome {position: absolute; top: 40%; width: 100%; padding: 0 6em; line-height: 1.6;}
+#cover .hello {font-size: 5em; font-weight: 600; color: white; margin: 0 auto; word-spacing: 4px; letter-spacing: -0.05em; text-shadow: 0 1px 1px rgba(0,0,0,0.75);}
+#cover .caption {font-size: 1.8em; font-style: italic; color: white; padding: 0 2em; text-shadow: 0 1px 1px rgba(0,0,0,0.75);}
+
+/* -------------------------------------------------------------------------
+ * 5.0 PORTFOLIO
+ * ------------------------------------------------------------------------- */
+
+#portfolio {background: white; margin: 0 auto; overflow: hidden; clear: both;}
+
+.portfolio-items {max-width: 1080px; margin: 0 auto; clear: both; overflow: hidden;}
+.portfolio-items li {width: 330px; height: 330px; float: left; margin: 1.5em; border: 1px solid #232930; display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* NEW - Chrome */ display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */}
+
+/* Portfolio Highlights */
+
+.featured-port {padding: 1em;}
+
+.job-preview {position: relative; display: block; height: 0; padding-bottom: 100%;}
+
+.job-image {width: 308px; height: 308px;}
+.job-description {position: absolute; display: table; background-color: #232930; width: 308px; height: 308px; top: 0; left: 0; opacity: 0; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -o-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out;}
+.job-description h2::after {content: " "; border: solid 1px white; display: block; width: 1.2em; margin: 0.8em auto 0.6em auto;}
+.job-description-content {display:table-cell; vertical-align:middle; width: inherit; height: inherit; padding: 0 4em;}
+.job-categories {font-size: 1.4em;}
+.job-preview:hover .job-description {opacity:1}
+
+/* -------------------------------------------------------------------------
+ * 6.0 Testimonials
+ * ------------------------------------------------------------------------- */
+
+#testimonials {background: url("images/dean-bg-beach.png") no-repeat; background-position: top center; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; -o-background-size: cover; width: 100%; margin: 0 auto; z-index: 100; overflow: hidden; clear: both;}
+#testimonials h1::after {border-color: white;}
+#testimonials .view-content {width: 1020px; color: white;}
+
+.features {clear: both; overflow: hidden; padding: 4em 0;}
+
+.icon {height: 160px; width: 160px; max-width: 100%; border: 2px solid white; border-radius: 50%; -o-border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; display: block; color: white; position: relative; margin: auto auto 2em auto;}
+
+.branding, .design, .web {background-repeat: no-repeat; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; -o-background-size: cover; display: inline-block; width: 100px; height: 100px; margin: 3em;}
+.branding {background-image: url("images/dean-icon-branding.png");}
+.design {background-image: url("images/dean-icon-design.png");}
+.web {background-image: url("images/dean-icon-web.png");}
+
+/* -------------------------------------------------------------------------
+ * 7.0 FOOTER
+ * ------------------------------------------------------------------------- */
+ 
+footer { background-position: center bottom; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; -o-background-size: cover; position: relative; font-size: 1.4em; font-style: italic; color: white; clear: both; width: 100%; padding: 2.8em 0;}
+
+/* BUTTON BACK TO TOP */
+
+#scroll-to-top {background-image: url("images/dean-arrow-top.png"); background-color: #E1CDAA; background-position: center; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; -o-background-size: cover; width: 60px; height: 60px; position: fixed; right: 0; bottom: 20px; z-index: 1000; text-indent: -9999px; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s;}
+#scroll-to-top:hover {background-color: #232930;}
+
+/* -------------------------------------------------------------------------
+ * 8.0 IMAGES
+ * ------------------------------------------------------------------------- */
+
+/*
+Resize images to fit the main content area.
+ Use "size-auto" class to apply to other images.
+*/
+
+img {max-width: 100%; width: auto; height: auto; border: 0; vertical-align: middle;}
+
+/* -------------------------------------------------------------------------
+ * 9.0 MEDIA QUERIES
+ * ------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1365px) {
+
+h1 {font-size: 2.8em;}
+#cover .hello {font-size: 4.6em;}
+#cover .caption {font-size: 1.7em;}
+.view-content {width: 1020px; padding: 12em 0;}
+.portfolio-items li {width: 310px; height: 310px;}
+.job-image {width: 288px; height: 288px;}
+.job-description {width: 288px; height: 288px;}
+.icon {height: 150px; width: 150px; margin: auto auto 1em auto;}
+.branding, .design, .web {width: 90px; height: 90px;}
+.features {padding: 2em 0;}
+
+}
+
+@media screen and (max-width: 1180px) {
+
+#cover .hello {font-size: 4em;}
+#cover .caption {font-size: 1.6em;}
+#testimonials .view-content {width: 85%;}
+.view-content {width: 810px;}
+.intro {width: 65%;}
+.portfolio-items li {width: 260px; height: 260px; margin: 0.5em;}
+.job-image {width: 238px; height: 238px;}
+.job-description {width: 238px; height: 238px;}
+.job-description h2 {font-size: 2em;}
+.job-description-content {padding: 0 3em;}
+.icon {height: 140px; width: 140px;}
+.branding, .design, .web {width: 80px; height: 80px;}
+#scroll-to-top {width: 50px; height: 50px;}
+footer {padding: 2.4em 0;}
+
+}
+
+@media screen and (max-width: 960px) {
+
+h1 {font-size: 2.6em;}
+#main-header.fixed nav, #secondary-header nav {margin-top: 2.2em;}
+#logo {font-size: 2em; line-height: 50px; width: 60px; height: 60px; margin-top: 2em; border-width: 5px;}
+#navigation {margin-top: 5.6em;}
+#navigation li a {font-size: 1.6em;}
+#cover .hello {font-size: 3.5em;}
+.view-content {width: 660px;}
+.portfolio-items li {width: 300px; height: 300px; margin: 1.5em;}
+.job-image {width: 278px; height: 278px;}
+.job-description {width: 278px; height: 278px;}
+input[type="text"], input[type="email"], textarea {font-size: 1em;}
+input[type="submit"] {font-size: 1.3em;}
+.post-content input[type="submit"] {font-size: 1.2em; margin: 1.4em auto 1em auto;}
+.post-intro {width: 80%;}
+form {width: 100%; padding: 0 1em;}
+
+}
+
+@media screen and (max-width: 768px) {
+
+p img {margin-bottom: -0.5em;}
+#cover .hello {font-size: 3.2em;}
+.post-single {width: 100%; padding: 0 2em;}
+.intro {width: 80%}
+.view-content {width: 600px;}
+.portfolio-items li {width: 280px; height: 280px; margin: 1em;}
+.job-image {width: 258px; height: 258px;}
+.job-description {width: 258px; height: 258px;}
+.column {width: 100%; margin: 3em 0;}
+.column:first-child {margin: 0;}
+.column:last-child {margin: 0;}
+.features .column {margin: 6em 0;}
+.features .column:first-child {margin: 0;}
+.features .column:last-child {margin: 0;}
+.icon {width: 160px; height: 160px;}
+.branding, .design, .web {width: 100px; height: 100px;}
+.post-content input[type="submit"] {margin: 1.4em auto 0.6em auto;}
+#scroll-to-top {display: none !important;}
+
+}
+
+@media screen and (max-width: 640px) {
+
+#awwwards {display: none;}
+#navigation {margin-top: 3.4em;}
+#logo {font-size: 1.7em; line-height: 42px; width: 50px; height: 50px; margin-top: 1.6em; border-width: 4px;}
+#main-header.fixed #logo, #secondary-header #logo {line-height: 42px; border-width: 4px;}
+#cover .welcome {padding: 0 2em;}
+#cover .hello {font-size: 3em; line-height: 1.2; text-shadow: none;}
+#cover .caption {font-size: 1.5em; padding: 0.4em 0 0 0; text-shadow: none;}
+.view-content {width: 400px;}
+.portfolio-items li {width: 330px; height: 330px; margin: 1em 3.5em;}
+.job-image {width: 308px; height: 308px;}
+.job-description {width: 308px; height: 308px;}
+.job-description h2 {font-size: 2.4em;}
+input[type="text"], input[type="email"], textarea {width: 100%;}
+
+}
+
+@media screen and (max-width: 480px) {
+
+#navigation {margin-top: 3.7em; margin-right: 0;}
+#navigation li {padding: 0.2em 1.4em; border-width: 0.1em;}
+#navigation li a {font-size: 1.5em; font-weight: 300; letter-spacing: 0;}
+#main-header.fixed, #secondary-header {height: 70px;}
+#main-header.fixed #logo, #secondary-header #logo {font-size: 1.3em; line-height: 35px; width: 40px; height: 40px; margin-top: 15px; margin-left: 4%; border-width: 0.25em;}
+#main-header.fixed nav, #secondary-header nav {margin-top: 1.95em;}
+#cover .hello {font-size: 2.8em;}
+#testimonials .view-content {width: 100%; padding: 10em 2em;}
+.single-content {margin-top: 6em;}
+.view-content {width: 300px; padding: 10em 0;}
+.intro {width: 100%; padding: 0 2em;}
+.portfolio-items li {width: 280px; height: 280px; margin: 1em;}
+.job-image {width: 258px; height: 258px;}
+.job-description {width: 258px; height: 258px;}
+.job-description h2 {font-size: 2em;}
+.post-share {width: 16.8em;}
+.post-nav {width: 8.2em;}
+footer {padding: 1.5em;}
+
+}
