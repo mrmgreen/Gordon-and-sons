@@ -1,0 +1,47 @@
+{
+  "name": "gordon-and-sons",
+  "version": "2.0.0",
+  "description": "Website for Gordon and Sons building contractors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrmgreen/Gordon-and-sons.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "mrmgreen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrmgreen/Gordon-and-sons/issues"
+  },
+  "homepage": "https://github.com/mrmgreen/Gordon-and-sons#readme",
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "mocha": "^3.4.2",
+    "mysql": "^2.14.1",
+    "postcss-loader": "^1.3.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.1.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.2.0",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.18.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0"
+  }
+}
