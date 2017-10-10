@@ -1,7 +1,10 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'inline-source-map',
+  devServer: { contentBase: './', hot: true },
   entry: [
     './index.jsx',
   ],
@@ -29,4 +32,8 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(['static']),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
